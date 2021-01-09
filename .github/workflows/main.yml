@@ -20,7 +20,7 @@ jobs:
       uses: actions/setup-node@master
     - run: yarn
     - run: yarn build
-    - run: tar -zcvf release.tgz .nuxt static nuxt.config.js package.json yarn.lock pm2.config.json
+    - run: tar -zcvf release.tgz .nuxt static nuxt.config.ts package.json yarn.lock pm2.config.json
 
     # 发布 Release
     - name: Create Release
@@ -56,7 +56,7 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           cd /root/realworld-nuxtjs
-          wget https://github.com/lipengzhou/realworld-nuxtjs/releases/latest/download/release.tgz -O release.tgz
+          wget https://github.com/yipf42/nuxt-ts-demo/releases/latest/download/release.tgz -O release.tgz
           tar zxvf release.tgz
           npm install --production
           pm2 reload pm2.config.json
