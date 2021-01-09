@@ -1,7 +1,7 @@
 import type { NuxtConfig } from '@nuxt/types'
 
 const config: NuxtConfig = {
-  target: 'static',
+  target: 'server',
   head: {
     title: 'Conduit',
     meta: [
